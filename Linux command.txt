@@ -1,0 +1,113 @@
+network:
+  version: 2
+  renderer: networkd
+  ethernets:
+    eth0:
+      dhcp4: no
+      addresses:
+        - 10.10.10.2/24
+      routes:
+        - to: 10.10.10.0/24
+          via: 10.10.10.1
+          metric: 1111
+  wifis:
+    wlan0:
+      dhcp4: true
+      access-points:
+        "P 35.12":
+          password: "0961466255"
+
+
+network:
+  version: 2  
+  renderer: networkd
+  ethernets:
+    eth0:
+      dhcp4: true
+  wifis:
+    wlan0:
+      dhcp4: true
+      access-points:
+        "VIETTEL":
+          password: "0987654321"
+
+
+
+
+
+
+
+
+
+sudo dhclient -v
+nano /etc/netplan/orangepi-default.yaml
+netplan apply
+
+ssh-keygen -R 10.10.10.2
+
+passwd root
+
+sudo apt-get install -y dotnet-sdk-8.0
+
+sudo apt install mpv
+
+journalctl -u API.service  -f
+
+
+sudo nano /boot/orangepiEnv.txt  
+overlays=spi-spidev1
+param_spidev_spi_bus=0
+ls /dev/spi*
+
+
+nano ~/.bash_profile
+[[ -z $DISPLAY && $(tty) == /dev/tty1 ]] && startx
+
+
+
+
+nano ~/.xinitrc // mo file bang lenh nay roi nhap noi dung phia duoi
+xset -dpms      # Tắt chế độ tiết kiệm năng lượng
+xset s off      # Tắt screensaver
+xset s noblank  # Ngăn màn hình bị trống
+chromium-browser --window-size=1920,1080 --start-fullscreen --noerrdialogs --disable-infobars --kiosk "youtube.com"
+
+sudo rm -rf /etc/motd /etc/update-motd.d/*
+sudo rm /etc/apt/sources.list.d/docker.list
+sudo nano /etc/apt/sources.list
+
+
+deb http://ports.ubuntu.com/ubuntu-ports jammy main restricted universe multiverse
+deb http://ports.ubuntu.com/ubuntu-ports jammy-updates main restricted universe multiverse
+deb http://ports.ubuntu.com/ubuntu-ports jammy-security main restricted universe multiverse
+deb http://ports.ubuntu.com/ubuntu-ports jammy-backports main restricted universe multiverse
+deb http://archive.canonical.com/ubuntu jammy partner
+
+
+
+sudo nano /etc/resolv.conf
+
+nameserver 8.8.8.8
+nameserver 1.1.1.1
+
+sudo systemd-resolve --flush-caches
+
+passwd
+
+widesync@twistsoft_2025
+
+
+mosquitto_passwd -c /etc/mosquitto/passwd WideSync
+mosquitto_passwd /etc/mosquitto/passwd addUser
+sudo nano /etc/mosquitto/conf.d/auth.conf
+"
+allow_anonymous false
+password_file /etc/mosquitto/passwd
+"
+sudo systemctl restart mosquitto
+
+
+
+
+/etc/mosquitto/aclfile
+
