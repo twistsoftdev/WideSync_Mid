@@ -1,0 +1,21 @@
+# Bỏ qua thư mục build
+/bin/
+/obj/
+*.vs
+# Bỏ qua file user settings trong Visual Studio/JetBrains
+*.user
+*.suo
+
+# Bỏ qua file log
+*.log
+
+# Bỏ qua file cấu hình tạm
+.env
+*.db
+*.sqlite
+
+# Bỏ qua thư mục node_modules (nếu dùng Node/React)
+node_modules/
+
+# Thư mục publish ASP.NET
+publish/
