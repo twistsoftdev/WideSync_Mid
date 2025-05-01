@@ -19,14 +19,19 @@ network:
 
 
 network:
-  version: 2  
+  version: 2
   renderer: networkd
   ethernets:
-    eth0:
+    eth1:
       dhcp4: true
+      optional: true
+    enx2089846a96ab:
+      dhcp4: true
+      optional: true
   wifis:
     wlan0:
       dhcp4: true
+      optional: true
       access-points:
         "VIETTEL":
           password: "0987654321"
